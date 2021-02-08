@@ -75,4 +75,15 @@ public class DiamondTest {
         assertEquals("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n", outContent.toString());
     }
 
+    @Test
+    void should_return_d_diamond_when_lower_case_d_is_submitted() {
+        // Given
+        Diamond diamond = new Diamond("d");
+
+        // When
+        diamond.print();
+
+        // Then
+        assertEquals("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n", outContent.toString());
+    }
 }
