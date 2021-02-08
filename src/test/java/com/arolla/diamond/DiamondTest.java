@@ -21,4 +21,16 @@ public class DiamondTest {
         assertEquals("A", diamond.print());
     }
 
+    @Test
+    void should_return_abba_when_b_is_submitted() {
+        // Given
+        Diamond diamond;
+
+        // When
+        diamond = new Diamond("B");
+
+        // Then
+        assertEquals(" A \nB B\n A ", diamond.print());
+    }
+
 }
