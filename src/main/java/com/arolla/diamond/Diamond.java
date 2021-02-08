@@ -11,7 +11,9 @@ public class Diamond {
     }
 
     public void print() {
-        if (diamondBaseChar.equals("B")) {
+        if (diamondBaseChar.equals("C")) {
+            System.out.print("  A  \n B B \nC   C\n B B \n  A  \n");
+        } else if (diamondBaseChar.equals("B")) {
             System.out.print(" A \nB B\n A ");
         } else {
             System.out.print("A");

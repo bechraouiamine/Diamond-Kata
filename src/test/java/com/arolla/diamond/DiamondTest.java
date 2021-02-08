@@ -51,4 +51,16 @@ public class DiamondTest {
         assertEquals(" A \nB B\n A ", outContent.toString());
     }
 
+    @Test
+    void should_return_c_diamond_when_c_is_submitted() {
+        // Given
+        Diamond diamond = new Diamond("C");
+
+        // When
+        diamond.print();
+
+        // Then
+        assertEquals("  A  \n B B \nC   C\n B B \n  A  \n", outContent.toString());
+    }
+
 }
