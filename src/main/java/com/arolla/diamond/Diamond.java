@@ -10,10 +10,11 @@ public class Diamond {
         diamondBaseChar = inputChar;
     }
 
-    public String print() {
+    public void print() {
         if (diamondBaseChar.equals("B")) {
-            return " A \nB B\n A ";
+            System.out.print(" A \nB B\n A ");
+        } else {
+            System.out.print("A");
         }
-        return "A";
     }
 }
