@@ -30,7 +30,7 @@ public class DiamondTest {
     @Test
     void should_return_a_when_a_is_submitted() {
         // Given
-        Diamond diamond = new Diamond("A");
+        Diamond diamond = new Diamond('A');
 
         // When
         diamond.print();
@@ -42,7 +42,7 @@ public class DiamondTest {
     @Test
     void should_return_abba_when_b_is_submitted() {
         // Given
-        Diamond diamond = new Diamond("B");
+        Diamond diamond = new Diamond('B');
 
         // When
         diamond.print();
@@ -54,7 +54,7 @@ public class DiamondTest {
     @Test
     void should_return_c_diamond_when_c_is_submitted() {
         // Given
-        Diamond diamond = new Diamond("C");
+        Diamond diamond = new Diamond('C');
 
         // When
         diamond.print();
@@ -66,7 +66,7 @@ public class DiamondTest {
     @Test
     void should_return_d_diamond_when_d_is_submitted() {
         // Given
-        Diamond diamond = new Diamond("D");
+        Diamond diamond = new Diamond('D');
 
         // When
         diamond.print();
@@ -78,7 +78,7 @@ public class DiamondTest {
     @Test
     void should_return_d_diamond_when_lower_case_d_is_submitted() {
         // Given
-        Diamond diamond = new Diamond("d");
+        Diamond diamond = new Diamond('d');
 
         // When
         diamond.print();
@@ -86,4 +86,5 @@ public class DiamondTest {
         // Then
         assertEquals("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n", outContent.toString());
     }
+
 }
