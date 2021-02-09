@@ -189,6 +189,17 @@ public class DiamondTest {
 
     }
 
-    
+    @Test
+    void should_return_the_5th_line_of_Z_diamond() {
+        // Given
+        Diamond diamond = new Diamond('Z');
+
+        // When
+        Line line = diamond.buildLine(5);
+
+        // Then
+        assertEquals("                     E       E                     \n", line.getStringValue());
+
+    }
 
 }

@@ -78,6 +78,6 @@ public class Diamond {
     }
 
     public Line buildLine(int lineNumber) {
-        return new Line(lineNumber);
+        return new Line(lineNumber, diamondBaseChar);
     }
 }

@@ -5,16 +5,23 @@ package com.arolla.diamond;
  */
 public class Line {
     int lineNumber;
+    char diamondBaseChar;
 
-    public Line(int lineNumber) {
+
+    public Line(int lineNumber, char diamondBaseChar) {
         this.lineNumber = lineNumber;
+        this.diamondBaseChar = diamondBaseChar;
     }
 
     public String getStringValue() {
         if (lineNumber == 3) {
             return "                       C   C                       \n";
         } else if (lineNumber == 5) {
-            return "  E       E  \n";
+            if (diamondBaseChar == 'G') {
+                return "  E       E  \n";
+            } else {
+                return "                     E       E                     \n";
+            }
         }
         return "                      D     D                      \n";
     }
