@@ -1,9 +1,14 @@
 package com.arolla.diamond;
 
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Stream.generate;
+
 /**
  * Created by aminebechraoui, on 09/02/2021, in com.arolla.diamond
  */
 public class Line {
+    public static final String CARRIAGE_RETURN = "\n";
+    private static String ONE_SPACE = " ";
     int lineNumber;
     char diamondBaseChar;
 
@@ -15,14 +20,20 @@ public class Line {
 
     public String getStringValue() {
         if (lineNumber == 3) {
-            return "                       C   C                       \n";
+            return generateIndentation(23) + "C"+generateIndentation(3)+"C" + generateIndentation(23) + CARRIAGE_RETURN;
         } else if (lineNumber == 5) {
             if (diamondBaseChar == 'G') {
-                return "  E       E  \n";
+                return generateIndentation(2) + "E" + generateIndentation(7) + "E" + generateIndentation(2) + CARRIAGE_RETURN;
             } else {
-                return "                     E       E                     \n";
+                return generateIndentation(21) + "E" +generateIndentation(7)+ "E" + generateIndentation(21) + CARRIAGE_RETURN;
             }
         }
-        return "                      D     D                      \n";
+        return generateIndentation(22) + "D" +generateIndentation(5) + "D" + generateIndentation(22)+ CARRIAGE_RETURN;
+    }
+
+    private String generateIndentation(Integer spaceNumber) {
+        return generate(() -> ONE_SPACE)
+                .limit(spaceNumber)
+                .collect(joining());
     }
 }
