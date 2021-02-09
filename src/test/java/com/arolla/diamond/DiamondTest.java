@@ -176,4 +176,19 @@ public class DiamondTest {
 
     }
 
+    @Test
+    void should_return_the_5th_line_of_G_diamond() {
+        // Given
+        Diamond diamond = new Diamond('G');
+
+        // When
+        Line line = diamond.buildLine(5);
+
+        // Then
+        assertEquals("  E       E  \n", line.getStringValue());
+
+    }
+
+    
+
 }

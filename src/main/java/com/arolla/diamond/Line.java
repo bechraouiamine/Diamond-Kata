@@ -13,6 +13,8 @@ public class Line {
     public String getStringValue() {
         if (lineNumber == 3) {
             return "                       C   C                       \n";
+        } else if (lineNumber == 5) {
+            return "  E       E  \n";
         }
         return "                      D     D                      \n";
     }
