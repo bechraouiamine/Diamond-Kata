@@ -1,5 +1,9 @@
 package com.arolla.diamond;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -84,9 +88,23 @@ public class Diamond {
     }
 
     public void printLines() {
-        buildLinesUpToBaseLine().forEach(l -> {
-            System.out.print(l.getStringValue());
+        Stream<Line> diamondList = getDiamondListOfLine();
+
+        diamondList.forEach(line -> {
+            System.out.print(line.getStringValue());
         });
+    }
+
+    private Stream<Line> getDiamondListOfLine() {
+        List<Line> upToBaseLineLines = buildLinesUpToBaseLine().collect(Collectors.toList());
+
+        return Stream.concat(upToBaseLineLines.stream(),  getFromBaseLineLines(upToBaseLineLines).stream());
+    }
+
+    private List<Line> getFromBaseLineLines(List<Line> upToBaseLineLines) {
+        List<Line> fromBaseLineLines = new ArrayList<Line>(upToBaseLineLines.subList(0, upToBaseLineLines.size() - 1));
+        Collections.reverse(fromBaseLineLines);
+        return fromBaseLineLines;
     }
 
     public Stream<Line> buildLinesUpToBaseLine() {

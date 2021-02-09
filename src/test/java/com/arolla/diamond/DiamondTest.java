@@ -217,7 +217,7 @@ public class DiamondTest {
 
 
     @Test
-    void should_return_the_1st_line_of_Z_diamond_up_to_base_line() {
+    void should_return_z_diamond_when_z_is_submitted_print_method() {
         // Given
         Diamond diamond = new Diamond('Z');
 
@@ -226,32 +226,58 @@ public class DiamondTest {
 
         // Then
         assertEquals("                         A                         \n" +
-                "                        B B                        \n" +
-                "                       C   C                       \n" +
-                "                      D     D                      \n" +
-                "                     E       E                     \n" +
-                "                    F         F                    \n" +
-                "                   G           G                   \n" +
-                "                  H             H                  \n" +
-                "                 I               I                 \n" +
-                "                J                 J                \n" +
-                "               K                   K               \n" +
-                "              L                     L              \n" +
-                "             M                       M             \n" +
-                "            N                         N            \n" +
-                "           O                           O           \n" +
-                "          P                             P          \n" +
-                "         Q                               Q         \n" +
-                "        R                                 R        \n" +
-                "       S                                   S       \n" +
-                "      T                                     T      \n" +
-                "     U                                       U     \n" +
-                "    V                                         V    \n" +
-                "   W                                           W   \n" +
-                "  X                                             X  \n" +
-                " Y                                               Y \n" +
-                "Z                                                 Z\n", outContent.toString());
-
+                        "                        B B                        \n" +
+                        "                       C   C                       \n" +
+                        "                      D     D                      \n" +
+                        "                     E       E                     \n" +
+                        "                    F         F                    \n" +
+                        "                   G           G                   \n" +
+                        "                  H             H                  \n" +
+                        "                 I               I                 \n" +
+                        "                J                 J                \n" +
+                        "               K                   K               \n" +
+                        "              L                     L              \n" +
+                        "             M                       M             \n" +
+                        "            N                         N            \n" +
+                        "           O                           O           \n" +
+                        "          P                             P          \n" +
+                        "         Q                               Q         \n" +
+                        "        R                                 R        \n" +
+                        "       S                                   S       \n" +
+                        "      T                                     T      \n" +
+                        "     U                                       U     \n" +
+                        "    V                                         V    \n" +
+                        "   W                                           W   \n" +
+                        "  X                                             X  \n" +
+                        " Y                                               Y \n" +
+                        "Z                                                 Z\n" +
+                        " Y                                               Y \n" +
+                        "  X                                             X  \n" +
+                        "   W                                           W   \n" +
+                        "    V                                         V    \n" +
+                        "     U                                       U     \n" +
+                        "      T                                     T      \n" +
+                        "       S                                   S       \n" +
+                        "        R                                 R        \n" +
+                        "         Q                               Q         \n" +
+                        "          P                             P          \n" +
+                        "           O                           O           \n" +
+                        "            N                         N            \n" +
+                        "             M                       M             \n" +
+                        "              L                     L              \n" +
+                        "               K                   K               \n" +
+                        "                J                 J                \n" +
+                        "                 I               I                 \n" +
+                        "                  H             H                  \n" +
+                        "                   G           G                   \n" +
+                        "                    F         F                    \n" +
+                        "                     E       E                     \n" +
+                        "                      D     D                      \n" +
+                        "                       C   C                       \n" +
+                        "                        B B                        \n" +
+                        "                         A                         \n",
+                outContent.toString());
     }
+
 
 }
