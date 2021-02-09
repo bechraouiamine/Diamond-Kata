@@ -150,6 +150,17 @@ public class DiamondTest {
                 outContent.toString());
     }
 
+    @Test
+    void should_return_the_3rd_line_of_Z_diamond() {
+        // Given
+        Diamond diamond = new Diamond('Z');
 
+        // When
+        Line line = diamond.buildLine(3);
+
+        // Then
+        assertEquals("                       C   C                       \n", line.getStringValue());
+
+    }
 
 }
