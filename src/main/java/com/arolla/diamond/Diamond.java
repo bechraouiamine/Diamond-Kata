@@ -4,9 +4,6 @@ package com.arolla.diamond;
  * Created by aminebechraoui, on 08/02/2021, in com.arolla.diamond
  */
 public class Diamond {
-    private static int UPPER_CASE = 64;
-    private static int LOWER_CASE = 96;
-
     private char diamondBaseChar;
 
     public Diamond(char inputChar) {

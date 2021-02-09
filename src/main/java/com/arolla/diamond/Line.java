@@ -7,7 +7,10 @@ import static java.util.stream.Stream.generate;
  * Created by aminebechraoui, on 09/02/2021, in com.arolla.diamond
  */
 public class Line {
-    public static final String CARRIAGE_RETURN = "\n";
+    private static int UPPER_CASE = 64;
+    private static int LOWER_CASE = 96;
+
+    private static final String CARRIAGE_RETURN = "\n";
     private static String ONE_SPACE = " ";
     int lineNumber;
     char diamondBaseChar;
@@ -19,21 +22,31 @@ public class Line {
     }
 
     public String getStringValue() {
-        if (lineNumber == 3) {
-            return generateIndentation(23) + "C"+generateIndentation(3)+"C" + generateIndentation(23) + CARRIAGE_RETURN;
-        } else if (lineNumber == 5) {
-            if (diamondBaseChar == 'G') {
-                return generateIndentation(2) + "E" + generateIndentation(7) + "E" + generateIndentation(2) + CARRIAGE_RETURN;
-            } else {
-                return generateIndentation(21) + "E" +generateIndentation(7)+ "E" + generateIndentation(21) + CARRIAGE_RETURN;
-            }
-        }
-        return generateIndentation(22) + "D" +generateIndentation(5) + "D" + generateIndentation(22)+ CARRIAGE_RETURN;
+        return generateIndentation(getExtremeSpacing())
+                + getLineCharacters() + generateIndentation(getMiddleSpacing()) +
+                getLineCharacters() + generateIndentation(getExtremeSpacing()) + CARRIAGE_RETURN;
     }
 
     private String generateIndentation(Integer spaceNumber) {
         return generate(() -> ONE_SPACE)
                 .limit(spaceNumber)
                 .collect(joining());
+    }
+
+    private int getDiamondBaseCharAlphabeticOrder() {
+        int diamondBaseCharCodePoint =         String.valueOf(diamondBaseChar).codePointAt(0);
+        return diamondBaseCharCodePoint > LOWER_CASE ? diamondBaseCharCodePoint - LOWER_CASE : diamondBaseCharCodePoint - UPPER_CASE;
+    }
+
+    private int getExtremeSpacing() {
+        return getDiamondBaseCharAlphabeticOrder() - lineNumber;
+    }
+
+    private int getMiddleSpacing() {
+        return 2 * (lineNumber - 2) + 1;
+    }
+
+    private char getLineCharacters() {
+        return (char)(UPPER_CASE+lineNumber);
     }
 }
