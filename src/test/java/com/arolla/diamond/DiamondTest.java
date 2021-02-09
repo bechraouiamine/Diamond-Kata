@@ -215,4 +215,43 @@ public class DiamondTest {
 
     }
 
+
+    @Test
+    void should_return_the_1st_line_of_Z_diamond_up_to_base_line() {
+        // Given
+        Diamond diamond = new Diamond('Z');
+
+        // When
+        diamond.printLines();
+
+        // Then
+        assertEquals("                         A                         \n" +
+                "                        B B                        \n" +
+                "                       C   C                       \n" +
+                "                      D     D                      \n" +
+                "                     E       E                     \n" +
+                "                    F         F                    \n" +
+                "                   G           G                   \n" +
+                "                  H             H                  \n" +
+                "                 I               I                 \n" +
+                "                J                 J                \n" +
+                "               K                   K               \n" +
+                "              L                     L              \n" +
+                "             M                       M             \n" +
+                "            N                         N            \n" +
+                "           O                           O           \n" +
+                "          P                             P          \n" +
+                "         Q                               Q         \n" +
+                "        R                                 R        \n" +
+                "       S                                   S       \n" +
+                "      T                                     T      \n" +
+                "     U                                       U     \n" +
+                "    V                                         V    \n" +
+                "   W                                           W   \n" +
+                "  X                                             X  \n" +
+                " Y                                               Y \n" +
+                "Z                                                 Z\n", outContent.toString());
+
+    }
+
 }

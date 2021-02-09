@@ -7,8 +7,8 @@ import static java.util.stream.Stream.generate;
  * Created by aminebechraoui, on 09/02/2021, in com.arolla.diamond
  */
 public class Line {
-    private static int UPPER_CASE = 64;
-    private static int LOWER_CASE = 96;
+    public static int UPPER_CASE = 64;
+    public static int LOWER_CASE = 96;
 
     private static final String CARRIAGE_RETURN = "\n";
     private static String ONE_SPACE = " ";

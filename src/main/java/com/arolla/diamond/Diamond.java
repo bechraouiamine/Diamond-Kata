@@ -1,5 +1,10 @@
 package com.arolla.diamond;
 
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
+
 /**
  * Created by aminebechraoui, on 08/02/2021, in com.arolla.diamond
  */
@@ -76,5 +81,24 @@ public class Diamond {
 
     public Line buildLine(int lineNumber) {
         return new Line(lineNumber, diamondBaseChar);
+    }
+
+    public void printLines() {
+        buildLinesUpToBaseLine().forEach(l -> {
+            System.out.print(l.getStringValue());
+        });
+    }
+
+    public Stream<Line> buildLinesUpToBaseLine() {
+        return getIntStreamUpToBaseLine().mapToObj(this::buildLine);
+    }
+
+    private IntStream getIntStreamUpToBaseLine() {
+        return IntStream.rangeClosed(1, getDiamondBaseCharAlphabeticOrder());
+    }
+
+    private int getDiamondBaseCharAlphabeticOrder() {
+        int diamondBaseCharCodePoint =         String.valueOf(diamondBaseChar).codePointAt(0);
+        return diamondBaseCharCodePoint > Line.LOWER_CASE ? diamondBaseCharCodePoint - Line.LOWER_CASE : diamondBaseCharCodePoint - Line.UPPER_CASE;
     }
 }
