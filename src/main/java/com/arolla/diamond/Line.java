@@ -23,8 +23,7 @@ public class Line {
 
     public String getStringValue() {
         return generateIndentation(getExtremeSpacing())
-                + getLineCharacters() + generateIndentation(getMiddleSpacing()) +
-                getLineCharacters() + generateIndentation(getExtremeSpacing()) + CARRIAGE_RETURN;
+                + generatingMiddleString() + generateIndentation(getExtremeSpacing()) + CARRIAGE_RETURN;
     }
 
     private String generateIndentation(Integer spaceNumber) {
@@ -48,5 +47,15 @@ public class Line {
 
     private char getLineCharacters() {
         return (char)(UPPER_CASE+lineNumber);
+    }
+
+    private String generatingMiddleString() {
+        if (lineNumber == 1) {
+            return "A";
+        } else {
+            return getLineCharacters() + generateIndentation(getMiddleSpacing()) +
+                    getLineCharacters();
+        }
+
     }
 }
