@@ -77,7 +77,7 @@ public class Diamond {
         }
     }
 
-    public Line buildLine(int i) {
-        return new Line();
+    public Line buildLine(int lineNumber) {
+        return new Line(lineNumber);
     }
 }
