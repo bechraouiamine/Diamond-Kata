@@ -33,10 +33,10 @@ public class DiamondTest {
         Diamond diamond = new Diamond('A');
 
         // When
-        diamond.print();
+        diamond.printLines();
 
         // Then
-        assertEquals("A", outContent.toString());
+        assertEquals("A\n", outContent.toString());
     }
 
     @Test
@@ -45,10 +45,10 @@ public class DiamondTest {
         Diamond diamond = new Diamond('B');
 
         // When
-        diamond.print();
+        diamond.printLines();
 
         // Then
-        assertEquals(" A \nB B\n A ", outContent.toString());
+        assertEquals(" A \nB B\n A \n", outContent.toString());
     }
 
     @Test
@@ -57,7 +57,7 @@ public class DiamondTest {
         Diamond diamond = new Diamond('C');
 
         // When
-        diamond.print();
+        diamond.printLines();
 
         // Then
         assertEquals("  A  \n B B \nC   C\n B B \n  A  \n", outContent.toString());
@@ -69,7 +69,7 @@ public class DiamondTest {
         Diamond diamond = new Diamond('D');
 
         // When
-        diamond.print();
+        diamond.printLines();
 
         // Then
         assertEquals("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n", outContent.toString());
@@ -81,7 +81,7 @@ public class DiamondTest {
         Diamond diamond = new Diamond('d');
 
         // When
-        diamond.print();
+        diamond.printLines();
 
         // Then
         assertEquals("   A   \n  B B  \n C   C \nD     D\n C   C \n  B B  \n   A   \n", outContent.toString());
@@ -93,7 +93,7 @@ public class DiamondTest {
         Diamond diamond = new Diamond('Z');
 
         // When
-        diamond.print();
+        diamond.printLines();
 
         // Then
         assertEquals("                         A                         \n" +
